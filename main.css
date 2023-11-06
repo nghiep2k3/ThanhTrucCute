@@ -20,7 +20,7 @@ body {
 
 .child {
     border-radius: 10px;
-    height: 140px;
+    height: auto;
     width: 100%;
     width: 300px;
     padding: 10px;
@@ -55,6 +55,9 @@ body {
     margin-top: 10px;
     position: relative;
     height: auto;
+}
+.hidden{
+    display: none;
 }
 
 #heart-rain-container {

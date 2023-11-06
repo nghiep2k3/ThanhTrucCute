@@ -42,7 +42,7 @@
                         alt="">
                 </div>
             </div>
-            <p style="text-align: center; font-size: 18px;">Bạn có nhớ anh người yêu không?</p>
+            <p class="this" style="text-align: center; font-size: 18px;">Bạn có nhớ anh người yêu không?</p>
             <div class="selectBtn">
                 <button class="Btn_No">Không</button>
                 <button class="Btn_Yes">Có</button>
@@ -95,10 +95,12 @@
         const startRainButton = document.getElementById("startRainButton");
         const heartRainContainer = document.getElementById("heart-rain-container");
         const InnerText = document.querySelector('.InnerText')
+        const hidden = document.querySelector('.this')
 
         startRainButton.addEventListener("click", () => {
             InnerText.innerHTML = "Yêu trúc nhiều ";
             createHeartRain();
+            hidden.classList.add("hidden");
         });
 
         function createHeartRain() {
