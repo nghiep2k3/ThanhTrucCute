@@ -7,7 +7,7 @@
     <meta name="og:description" content="ThanhTruc">
     <meta name="description" content="ThanhTruc">
     <link rel="stylesheet" href="./main.css">
-    <title>Document</title>
+    <title>Người yêu emmmmm :)))</title>
     <style>
         * {
             cursor: none;
@@ -32,10 +32,6 @@
 
 <body>
     <div id="container">
-        <audio controls loop id="myAudio" style="display: none;">
-            <source src="./bgc.mp3" type="audio/mp3">
-            Trình duyệt của bạn không hỗ trợ âm thanh.
-        </audio>
         <div class="child">
             <div style="display: flex; justify-content: center;">
                 <h1 class="InnerText" style="text-align: center; color: #FF033E;"><span>Anh</span>
@@ -57,14 +53,22 @@
     </div>
 
     <script src="./main.js"></script>
-    <script>
-        setTimeout(function() {
-            var audio = document.getElementById("myAudio");
-            if (audio) {
-                audio.play();
-            }
-        }, 2000);
-    </script>
+    <!-- <script>
+        var audio = document.getElementById("myAudio");
+
+        // Hàm phát âm thanh
+        function playAudio() {
+            audio.play();
+        }
+
+        // Đợi cho trang web được tải xong
+        window.addEventListener("load", function () {
+            // Đợi thêm 2 giây và sau đó kích hoạt phát âm thanh
+            setTimeout(function () {
+                playAudio();
+            }, 1000);
+        });
+    </script> -->
 
     <script>
         document.addEventListener("mousemove", (e) => {
