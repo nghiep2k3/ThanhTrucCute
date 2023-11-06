@@ -32,7 +32,7 @@
 
 <body>
     <div id="container">
-        <audio controls loop autoplay style="display: none;">
+        <audio controls loop id="myAudio" style="display: none;">
             <source src="./bgc.mp3" type="audio/mp3">
             Trình duyệt của bạn không hỗ trợ âm thanh.
         </audio>
@@ -57,6 +57,14 @@
     </div>
 
     <script src="./main.js"></script>
+    <script>
+        setTimeout(function() {
+            var audio = document.getElementById("myAudio");
+            if (audio) {
+                audio.play();
+            }
+        }, 2000);
+    </script>
 
     <script>
         document.addEventListener("mousemove", (e) => {
