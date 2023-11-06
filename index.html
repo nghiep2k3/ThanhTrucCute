@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+    <style>
+        * {
+            cursor: none;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url(https://cur.cursors-4u.net/symbols/sym-1/sym49.cur);
+            background-size: cover;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        body {
+            cursor: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="child">
+            <div style="display: flex; justify-content: center;">
+                <h1 class="InnerText" style="text-align: center; color: #FF033E;"><span>Anh</span>
+                    người yêu thì rất nhớ bạn</h1>
+                <div style="width: 40px;">
+                    <img id="startRainButton" style="max-width: 100%; "
+                        src="https://bedental.vn/wp-content/uploads/2022/11/tong-hop-icon-mat-cuoi-chat-nhat-5-1.png"
+                        alt="">
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 18px;">Bạn có nhớ anh người yêu không?</p>
+            <div class="selectBtn">
+                <button class="Btn_No">Không</button>
+                <button class="Btn_Yes">Có</button>
+            </div>
+        </div>
+        <!-- <button id="startRainButton">Bắt đầu mưa trái tim</button> -->
+        <div id="heart-rain-container"></div>
+    </div>
+
+    <script src="./main.js"></script>
+
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const cursorCount = 1; // Số lượng bản sao con trỏ
+            const distance = 20; // Khoảng cách giữa các bản sao
+
+            for (let i = 0; i < cursorCount; i++) {
+                const cursor = document.createElement("div");
+                cursor.className = "custom-cursor";
+                cursor.style.left = e.pageX - (cursorCount / 2) * distance + i * distance + "px";
+                cursor.style.top = e.pageY + "px";
+                document.body.appendChild(cursor);
+
+                setTimeout(() => {
+                    cursor.style.opacity = 0;
+                    cursor.addEventListener("transitionend", () => {
+                        cursor.remove();
+                    });
+                }, 500);
+            }
+        });
+    </script>
+    <script>
+        const startRainButton = document.getElementById("startRainButton");
+        const heartRainContainer = document.getElementById("heart-rain-container");
+        const InnerText = document.querySelector('.InnerText')
+
+        startRainButton.addEventListener("click", () => {
+            InnerText.innerHTML = "Yêu trúc nhiều ";
+            createHeartRain();
+        });
+
+        function createHeartRain() {
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement("div");
+                heart.className = "heart";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = -30 + Math.random() * window.innerHeight + "px";
+                heart.style.animationDuration = 2 + Math.random() * 2 + "s";
+                heartRainContainer.appendChild(heart);
+            }
+        }
+    </script>
+
+    <script>
+        const button1 = document.querySelector('.Btn_No')
+        const button2 = document.querySelector('.Btn_Yes')
+
+        const selectBtn = document.querySelector('.selectBtn')
+
+        button1.addEventListener("mouseover", () => {
+            button1.style.position = 'absolute';
+            selectBtn.style.position = 'static';
+            const newX = Math.random() * (window.innerWidth - 100); // Tạo vị trí ngẫu nhiên trên chiều ngang
+            const newY = Math.random() * (window.innerHeight - 40); // Tạo vị trí ngẫu nhiên trên chiều dọc
+            button1.style.left = newX + "px";
+            button1.style.top = newY + "px";
+        });
+
+        button2.addEventListener("mouseover", () => {
+            button2.style.position = 'absolute';
+            selectBtn.style.position = 'static';
+            const newX = Math.random() * (window.innerWidth - 100); // Tạo vị trí ngẫu nhiên trên chiều ngang
+            const newY = Math.random() * (window.innerHeight - 40); // Tạo vị trí ngẫu nhiên trên chiều dọc
+            button2.style.left = newX + "px";
+            button2.style.top = newY + "px";
+        });
+
+        button1.addEventListener("click", () => {
+            button1.style.position = 'absolute';
+            selectBtn.style.position = 'static';
+            const newX = Math.random() * (window.innerWidth - 100); // Tạo vị trí ngẫu nhiên trên chiều ngang
+            const newY = Math.random() * (window.innerHeight - 40); // Tạo vị trí ngẫu nhiên trên chiều dọc
+            button1.style.left = newX + "px";
+            button1.style.top = newY + "px";
+        });
+
+        button2.addEventListener("click", () => {
+            button2.style.position = 'absolute';
+            selectBtn.style.position = 'static';
+            const newX = Math.random() * (window.innerWidth - 100); // Tạo vị trí ngẫu nhiên trên chiều ngang
+            const newY = Math.random() * (window.innerHeight - 40); // Tạo vị trí ngẫu nhiên trên chiều dọc
+            button2.style.left = newX + "px";
+            button2.style.top = newY + "px";
+        });
+    </script>
+</body>
+
+</html>

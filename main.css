@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#container {
+    /* background-color: #404040; */
+    height: 100vh;
+    width: 100%;
+    /* background-color: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.child {
+    border-radius: 10px;
+    height: 140px;
+    width: 100%;
+    width: 300px;
+    padding: 10px;
+    background-color: #fed3d3;
+}
+
+
+
+.Btn_Yes {
+    border: none;
+    width: 100px;
+    line-height: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 99px;
+    transition: all 0.3s ease;
+}
+
+.Btn_No {
+    order: none;
+    width: 100px;
+    line-height: 25px;
+    background-color: black;
+    color: white;
+    border-radius: 99px;
+    transition: all 0.3s ease;
+}
+
+.selectBtn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    position: relative;
+    height: auto;
+}
+
+#heart-rain-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur');
+    background-size: cover;
+    animation: heartRain 2s linear infinite;
+}
+
+@keyframes heartRain {
+    to {
+        transform: translate(0, 100vh);
+        opacity: 0;
+    }
+}
+
